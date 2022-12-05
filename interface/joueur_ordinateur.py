@@ -18,3 +18,9 @@ class JoueurOrdinateur:  # N'oubliez pas d'hériter de Joueur !!
     # Écrivez les 4 méthodes demandées.
 
 #### FIN DÉFI JOUEUR ORDINATEUR ####
+
+
+
+# prendre heriter de la classe joueur
+# les difference sont les choix du jouer(au lieu on va mettre des randomizer)
+#radint(4) ...if 1 stop. else go

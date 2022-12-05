@@ -207,3 +207,14 @@ class FenetreIntroduction(Toplevel):
         # Commencez par supprimer la ligne du raise.
         raise NotImplementedError
         #### FIN DÉFI LECTURE FICHIER CONFIG ####
+
+
+# x = a
+# if x.isnumeric() == ValueError:
+#     print(label)
+# else:
+#     pass
+
+
+
+
