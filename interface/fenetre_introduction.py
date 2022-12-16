@@ -209,11 +209,20 @@ class FenetreIntroduction(Toplevel):
         #### FIN DÉFI LECTURE FICHIER CONFIG ####
 
 
-# x = a
-# if x.isnumeric() == ValueError:
-#     print(label)
-# else:
-#     pass
+
+        # f = open(config.txt, 'r')
+        # liste_lignes = f.readlines()
+        # f.close()
+        # for i in liste_lignes:
+        #     i = i.rstrip('\n')
+        # cle, valeur = ligne.rstrip().split(":")
+
+
+
+
+
+
+
 
 
 

@@ -162,7 +162,7 @@ class CanvasArene(Canvas):
                 self.create_oval((gauche+(3*l+2*d)), (haut+(2*l+1*d)), (gauche+(3*l+3*d)), haut+(2*l+2*d), fill='black')  # MR
                 self.create_oval((gauche+(1*l+0*d)), (haut+(3*l+2*d)), (gauche+(1*l+1*d)), haut+(3*l+3*d), fill='black')  # BL
                 self.create_oval((gauche+(3*l+2*d)), (haut+(3*l+2*d)), (gauche+(3*l+3*d)), haut+(3*l+3*d), fill='black')  # BR
-                
+
             #### FIN DÉFI DESSINER DÉS ####
 
     def permettre_clics(self, case_cliquable, suite_clic):
