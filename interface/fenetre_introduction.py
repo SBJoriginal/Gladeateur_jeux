@@ -2,7 +2,7 @@
 Module contenant la classe FenetreIntroduction et ses classes
 utilitaires FrameArene et FrameJoueurs.
 """
-
+import configparser
 from tkinter import IntVar, Button, Label, Entry, Frame, messagebox, RIDGE, Toplevel, \
     Checkbutton, END
 
@@ -205,5 +205,40 @@ class FenetreIntroduction(Toplevel):
     def obtenir_infos_remplissage(self):
         #### DÉBUT DÉFI LECTURE FICHIER CONFIG ####
         # Commencez par supprimer la ligne du raise.
-        raise NotImplementedError
+
+        # raise NotImplementedError
+
+        config = configparser.ConfigParser()
+
+        """
+        This module provides the ConfigParser class which implements a basic configuration language which provides 
+        a structure similar to what’s found in Microsoft Windows INI files. You can use this to write Python programs 
+        which can be customized by end users easily.
+
+        """
+        config.read("config.ini")
+
+        # cas 1 : Pas de fichier
+
+        if not config.sections():
+            raise FileNotFoundError
+
+        # cas 2 : Un champs manquant
+
+        if 'ARENE' not in config or 'JOEURS' not in config or 'taille' not in config[
+            'ARENE'] or 'nb_des_par_joeur' not in config['ARENE'] or 'nb_des_par_joeur' not in config[
+            'JOEURS'] or 'type' not in \
+                config['JOEURS'] or 'humains' not in config['JOEURS'] or 'ordinateurs' not in config['JOEURS']:
+            raise KeyError
+
+        # cas 3 : Le joueur
+        for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
+            if f'joueur{i}' in config['JOUEURS']['type']:  # changer formatage?
+                if f'joueur{i}' not in config['JOUEURS']['humains'] and f'joueur{i}' not in config['JOUEURS'][
+                    'ordinateurs']:
+                    raise KeyError
+                continue
+            raise KeyError
+
+        # cas 4 : a venir
         #### FIN DÉFI LECTURE FICHIER CONFIG ####

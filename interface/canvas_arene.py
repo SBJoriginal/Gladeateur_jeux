@@ -114,6 +114,11 @@ class CanvasArene(Canvas):
             #### DÉBUT DÉFI DESSINER DÉS ####
             # Commencez par supprimer la ligne du raise.
             raise NotImplementedError("Le défi Dessiner les dés n'a pas encore été réalisé!")
+
+
+
+
+
             #### FIN DÉFI DESSINER DÉS ####
 
     def permettre_clics(self, case_cliquable, suite_clic):

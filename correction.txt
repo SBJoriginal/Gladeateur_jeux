@@ -4,8 +4,8 @@ Fichier de correction TP4
 
 Étudiant 1
 ---------------
-Prénom et Nom:
-Numéro de dossier (NI):
+Prénom et Nom: EL HADJI DJIME NIMAGA
+Numéro de dossier (NI): 111 166 998
 Temps de réalisation:
 
 Étudiant 2
