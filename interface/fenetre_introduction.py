@@ -255,10 +255,10 @@ class FenetreIntroduction(Toplevel):
 
 
         config = configparser.ConfigParser()
-        print(config.sections())
+        #print(config.sections())
         #print(config)
 
-        print(config.read('config.ini'))
+        #print(config.read('config.ini'))
         if not config.sections():
             raise FileNotFoundError
         if 'ARENE' not in config or 'JOUEURS' not in config:
