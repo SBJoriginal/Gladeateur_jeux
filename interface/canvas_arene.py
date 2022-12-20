@@ -110,9 +110,9 @@ class CanvasArene(Canvas):
         if texte_de.isnumeric() or texte_de == 'X':
             self.create_text((gauche + droite) // 2, (haut + bas) // 2, fill='black',
                              font="Times 20 bold", text=texte_de)
-            print(texte_de)
+
         else:
-            print(texte_de)
+
             #### DÉBUT DÉFI DESSINER DÉS ####
             # Commencez par supprimer la ligne du raise.
             # raise NotImplementedError("Le défi Dessiner les dés n'a pas encore été réalisé!")

@@ -99,13 +99,32 @@ class FrameTableauJoueurs(Frame):
     def __init__(self, master):
         super().__init__(master)
 
+
         #### DÉBUT DÉFI TABLEAU DES JOUEURS ####
         # Une partie du code pour ce défi se trouve dans le constructeur,
         # le reste dans la méthode mise_a_jour
 
     def mise_a_jour(self):
         # Remplacez le pass par votre code.
-        pass
+
+        # self.frame = Label(self)
+        # self.frame.grid(row=0, column=1)
+
+
+        #
+        #
+        # # print(self.master.label_nom_joueur["Text"])
+        #
+        # print(self.master.frame_joueur.couleurs)
+        #
+        #
+        # # mon_label["fg"] = ma_couleur.
+        #
+        #
+        #
+        # # self.label_nom_joueur = Label(self.frame, text="hey")
+        # # self.label_nom_joueur.grid(row=0, column=0)
+
         #### FIN DÉFI TABLEAU DES JOUEURS ####
 
 
@@ -115,9 +134,7 @@ class FrameTempsAttente(Frame):
         super().__init__(master)
         #### DÉBUT DÉFI TEMPS ATTENTE ####
 
-
         def nouvelle_fonction():
-
             nouveau_temps_attente = scale_temps_attente.get()
             print(nouveau_temps_attente)
             return nouveau_temps_attente
@@ -125,7 +142,7 @@ class FrameTempsAttente(Frame):
         scale_temps_attente = Scale(master, from_=10, to=500, command=nouvelle_fonction)
         scale_temps_attente.grid(row=1, column=1, padx=10, pady=10)
 
-        self.master.gestionnaire_io.temps_attente = nouvelle_fonction
+        self.master.gestionnaire_io.temps_attente = lambda: nouvelle_fonction
 
 
 
