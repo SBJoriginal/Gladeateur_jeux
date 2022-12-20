@@ -104,8 +104,18 @@ class FrameTableauJoueurs(Frame):
         # le reste dans la méthode mise_a_jour
 
         self.frame_tableau_joueurs = FrameTableauJoueurs(self)
-        players = self.master.joueurs
-        # print(players)
+
+        label_text = "Joueur : ".format(i+1)
+        if  len (self.master.joueurs[i].dès) == 0:
+            label_text += "ÉLIMINÉ"
+        else:
+            label_text += "{}dés.format(len(self.master.joueurs[i].des))
+
+    Label = Label (self, text = label_text, fg = self.master.frame_joueur.couleurs[i])
+
+    label.grid(row=i, column=1, padx=2, pady=0)
+
+
 
 
 
