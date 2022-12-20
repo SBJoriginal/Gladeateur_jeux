@@ -216,31 +216,64 @@ class FenetreIntroduction(Toplevel):
         which can be customized by end users easily.
 
         """
-        config.read("config.ini")
+        # config.read('config.ini')
+        #
+        # # cas 1 : Pas de fichier
+        #
+        # if not config.sections():
+        #     raise FileNotFoundError
+        #
+        # # cas 2 : Un champs manquant
+        #
+        # if 'ARENE' not in config or 'JOUEURS' not in config or 'taille' not in config[
+        #     'ARENE'] or 'nb_des_par_joueur' not in config['ARENE'] or 'nb_des_par_joueur' not in config[
+        #     'JOEURS'] or 'type' not in \
+        #         config['JOUEURS'] or 'humains' not in config['JOUEURS'] or 'ordinateurs' not in config['JOUEURS']:
+        #     raise KeyError
+        #
+        # # cas 3 : Le joueur
+        # for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
+        #     if f'joueur{i}' in config['JOUEURS']['type']:  # changer formatage?
+        #         if f'joueur{i}' not in config['JOUEURS']['humains'] and f'joueur{i}' not in config['JOUEURS'][
+        #             'ordinateurs']:
+        #             raise KeyError
+        #         continue
+        #     raise KeyError
+        #
+        # # cas 4 : a venir
+        #
+        # self.frame_arene.changer_taille(int(config['ARENE']['taille']))
+        # self.frame_arene.changer_nombre_des(int(config['ARENE']['nb_des_par_joueur']))
+        # for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
+        #     if config['JOUEURS']['type'][f'joueur{i}'] == 'h':
+        #         self.frame_joueurs.changer_type_joueur(i - 1)
+        #     elif config['JOUEURS']['type'][f'joueur{i}'] == 'o':
+        #         self.frame_joueurs.changer_type_joueur(i - 1)
+        #         self.frame_joueurs.changer_type_joueur(i - 1)
 
-        # cas 1 : Pas de fichier
 
+
+
+        config = configparser.ConfigParser()
+        print(config.sections())
+        #print(config)
+
+        print(config.read('config.ini'))
         if not config.sections():
             raise FileNotFoundError
-
-        # cas 2 : Un champs manquant
-
-        if 'ARENE' not in config or 'JOEURS' not in config or 'taille' not in config[
-            'ARENE'] or 'nb_des_par_joeur' not in config['ARENE'] or 'nb_des_par_joeur' not in config[
-            'JOEURS'] or 'type' not in \
-                config['JOEURS'] or 'humains' not in config['JOEURS'] or 'ordinateurs' not in config['JOEURS']:
+        if 'ARENE' not in config or 'JOUEURS' not in config:
             raise KeyError
-
-        # cas 3 : Le joueur
+        if 'taille' not in config['ARENE'] or 'nb_des_par_joueur' not in config['ARENE']:
+            raise KeyError
+        if 'nb_joueurs' not in config['JOUEURS']:
+            raise KeyError
+        if 'type' not in config['JOUEURS'] or 'humains' not in config['JOUEURS'] or 'ordinateurs' not in config['JOUEURS']:
+            raise KeyError
         for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
-            if f'joueur{i}' in config['JOUEURS']['type']:  # changer formatage?
-                if f'joueur{i}' not in config['JOUEURS']['humains'] and f'joueur{i}' not in config['JOUEURS'][
-                    'ordinateurs']:
-                    raise KeyError
-                continue
-            raise KeyError
-
-        # cas 4 : a venir
+            if f'joueur{i}' not in config['JOUEURS']['type']:
+                raise KeyError
+            if f'joueur{i}' not in config['JOUEURS']['humains'] and f'joueur{i}' not in config['JOUEURS']['ordinateurs']:
+                raise KeyError
 
         self.frame_arene.changer_taille(int(config['ARENE']['taille']))
         self.frame_arene.changer_nombre_des(int(config['ARENE']['nb_des_par_joueur']))
@@ -251,4 +284,4 @@ class FenetreIntroduction(Toplevel):
                 self.frame_joueurs.changer_type_joueur(i - 1)
                 self.frame_joueurs.changer_type_joueur(i - 1)
 
-        #### FIN DÉFI LECTURE FICHIER CONFIG ####
+    #### FIN DÉFI LECTURE FICHIER CONFIG ####

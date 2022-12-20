@@ -102,36 +102,31 @@ class FrameTableauJoueurs(Frame):
         #### DÉBUT DÉFI TABLEAU DES JOUEURS ####
         # Une partie du code pour ce défi se trouve dans le constructeur,
         # le reste dans la méthode mise_a_jour
+        self.liste_de_joueurs = []
 
-        self.frame_tableau_joueurs = FrameTableauJoueurs(self)
-
-        label_text = "Joueur : ".format(i+1)
-        if  len (self.master.joueurs[i].dès) == 0:
-            label_text += "ÉLIMINÉ"
-        else:
-            label_text += "{}dés.format(len(self.master.joueurs[i].des))
-
-    Label = Label (self, text = label_text, fg = self.master.frame_joueur.couleurs[i])
-
-    label.grid(row=i, column=1, padx=2, pady=0)
-
-
+        for i in range(len(self.master.joueurs)):
+            self.liste_de_joueurs.append(
+                Label(self, text=self.master.joueurs[i], fg=self.master.frame_joueur.couleurs[i]))
+            self.liste_de_joueurs[i].grid(row=i, column=0)
 
 
 
     def mise_a_jour(self):
-        # Remplacez le pass par votre code.
+    # Remplacez le pass par votre code.
         pass
-        #### FIN DÉFI TABLEAU DES JOUEURS ####
+
+
+
+    #### FIN DÉFI TABLEAU DES JOUEURS ####
 
 
 class FrameTempsAttente(Frame):
     def __init__(self, master):
         super().__init__(master)
+
         #### DÉBUT DÉFI TEMPS ATTENTE ####
 
         def nouvelle_fonction():
-
             nouveau_temps_attente = scale_temps_attente.get()
             print(nouveau_temps_attente)
             return nouveau_temps_attente
@@ -139,6 +134,6 @@ class FrameTempsAttente(Frame):
         scale_temps_attente = Scale(master, from_=10, to=500, command=nouvelle_fonction)
         scale_temps_attente.grid(row=1, column=1, padx=10, pady=10)
 
-        self.master.gestionnaire_io.temps_attente = nouvelle_fonction
+        self.master.gestionnaire_io.temps_attente = lambda: nouvelle_fonction
 
         #### FIN DÉFI TEMPS ATTENTE ####
