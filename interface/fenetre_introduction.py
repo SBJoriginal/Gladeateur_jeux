@@ -241,4 +241,14 @@ class FenetreIntroduction(Toplevel):
             raise KeyError
 
         # cas 4 : a venir
+
+        self.frame_arene.changer_taille(int(config['ARENE']['taille']))
+        self.frame_arene.changer_nombre_des(int(config['ARENE']['nb_des_par_joueur']))
+        for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
+            if config['JOUEURS']['type'][f'joueur{i}'] == 'h':
+                self.frame_joueurs.changer_type_joueur(i - 1)
+            elif config['JOUEURS']['type'][f'joueur{i}'] == 'o':
+                self.frame_joueurs.changer_type_joueur(i - 1)
+                self.frame_joueurs.changer_type_joueur(i - 1)
+
         #### FIN DÉFI LECTURE FICHIER CONFIG ####
