@@ -246,3 +246,27 @@ class FenetreIntroduction(Toplevel):
                 self.frame_joueurs.changer_type_joueur(i - 1)
 
     #### FIN DÉFI LECTURE FICHIER CONFIG ####
+
+        #raise NotImplementedError
+        #### FIN DÉFI LECTURE FICHIER CONFIG ####
+
+
+
+        # f = open(config.txt, 'r')
+        # liste_lignes = f.readlines()
+        # f.close()
+        # for i in liste_lignes:
+        #     i = i.rstrip('\n')
+        # cle, valeur = ligne.rstrip().split(":")
+
+
+
+
+
+
+
+
+
+
+
+

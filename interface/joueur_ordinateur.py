@@ -7,8 +7,8 @@ Hérite de Joueur et contient une "intelligence artificielle" extrêmement rudim
 from random import randint
 from jeu.joueur import Joueur
 
-
 #### DÉBUT DÉFI JOUEUR ORDINATEUR ####
+
 
 class JoueurOrdinateur(Joueur):  # N'oubliez pas d'hériter de Joueur !!
     """
@@ -38,7 +38,6 @@ class JoueurOrdinateur(Joueur):  # N'oubliez pas d'hériter de Joueur !!
         else:
             return False
 
-
     # def decision_continuer(self):
     #        decision=randint(1,4)
     #        if decision == 4:
@@ -57,3 +56,5 @@ class JoueurOrdinateur(Joueur):  # N'oubliez pas d'hériter de Joueur !!
     #     return randint(1, max(1, self.arene.dimension // 4))
 
 #### FIN DÉFI JOUEUR ORDINATEUR ####
+
+
