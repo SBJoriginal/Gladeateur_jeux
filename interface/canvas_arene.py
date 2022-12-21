@@ -115,6 +115,76 @@ class CanvasArene(Canvas):
 
             #### DÉBUT DÉFI DESSINER DÉS ####
             # Commencez par supprimer la ligne du raise.
+
+            #raise NotImplementedError("Le défi Dessiner les dés n'a pas encore été réalisé!")
+
+            l, d = (0.10 * (droite - gauche)), (0.20 * (droite - gauche))
+
+        # Biblioteque de chaque point
+        # self.create_oval((gauche+(1*l+0*d)), (haut+(1*l+0*d)), (gauche+(1*l+1*d)), haut+(1*l+1*d), fill='black') #TL
+        # self.create_oval((gauche+(3*l+2*d)), (haut+(1*l+0*d)), (gauche+(3*l+3*d)), haut+(1*l+1*d), fill='black') #TR
+        # self.create_oval((gauche+(1*l+0*d)), (haut+(2*l+1*d)), (gauche+(1*l+1*d)), haut+(2*l+2*d), fill='black') #ML
+        # self.create_oval((gauche+(2*l+1*d)), (haut+(2*l+1*d)), (gauche+(2*l+2*d)), haut+(2*l+2*d), fill='black') #MM
+        # self.create_oval((gauche+(3*l+2*d)), (haut+(2*l+1*d)), (gauche+(3*l+3*d)), haut+(2*l+2*d), fill='black') #MR
+        # self.create_oval((gauche+(1*l+0*d)), (haut+(3*l+2*d)), (gauche+(1*l+1*d)), haut+(3*l+3*d), fill='black') #BL
+        # self.create_oval((gauche+(3*l+2*d)), (haut+(3*l+2*d)), (gauche+(3*l+3*d)), haut+(3*l+3*d), fill='black') #BR
+
+        if texte_de == "⚁":
+            print(2)
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (1 * l + 0 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TL
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (3 * l + 2 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BR
+
+        elif texte_de == "⚂":
+            print(3)
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (1 * l + 0 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TL
+            self.create_oval((gauche + (2 * l + 1 * d)), (haut + (2 * l + 1 * d)), (gauche + (2 * l + 2 * d)),
+                             haut + (2 * l + 2 * d), fill='black')  # MM
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (3 * l + 2 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BR
+
+        elif texte_de == "⚃":
+            print(4)
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (1 * l + 0 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TL
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (1 * l + 0 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TR
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (3 * l + 2 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BL
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (3 * l + 2 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BR
+
+        elif texte_de == "⚄":
+            print(5)
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (1 * l + 0 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TL
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (1 * l + 0 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TR
+            self.create_oval((gauche + (2 * l + 1 * d)), (haut + (2 * l + 1 * d)), (gauche + (2 * l + 2 * d)),
+                             haut + (2 * l + 2 * d), fill='black')  # MM
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (3 * l + 2 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BL
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (3 * l + 2 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BR
+
+        elif texte_de == "⚅":
+            print(6)
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (1 * l + 0 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TL
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (1 * l + 0 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (1 * l + 1 * d), fill='black')  # TR
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (2 * l + 1 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (2 * l + 2 * d), fill='black')  # ML
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (2 * l + 1 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (2 * l + 2 * d), fill='black')  # MR
+            self.create_oval((gauche + (1 * l + 0 * d)), (haut + (3 * l + 2 * d)), (gauche + (1 * l + 1 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BL
+            self.create_oval((gauche + (3 * l + 2 * d)), (haut + (3 * l + 2 * d)), (gauche + (3 * l + 3 * d)),
+                             haut + (3 * l + 3 * d), fill='black')  # BR
+
+
             # raise NotImplementedError("Le défi Dessiner les dés n'a pas encore été réalisé!")
 
             l, d = (0.10 * (droite - gauche)), (0.20 * (droite - gauche))
@@ -162,6 +232,7 @@ class CanvasArene(Canvas):
                 self.create_oval((gauche+(3*l+2*d)), (haut+(2*l+1*d)), (gauche+(3*l+3*d)), haut+(2*l+2*d), fill='black')  # MR
                 self.create_oval((gauche+(1*l+0*d)), (haut+(3*l+2*d)), (gauche+(1*l+1*d)), haut+(3*l+3*d), fill='black')  # BL
                 self.create_oval((gauche+(3*l+2*d)), (haut+(3*l+2*d)), (gauche+(3*l+3*d)), haut+(3*l+3*d), fill='black')  # BR
+
 
             #### FIN DÉFI DESSINER DÉS ####
 

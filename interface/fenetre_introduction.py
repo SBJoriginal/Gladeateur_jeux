@@ -2,7 +2,7 @@
 Module contenant la classe FenetreIntroduction et ses classes
 utilitaires FrameArene et FrameJoueurs.
 """
-
+import configparser
 from tkinter import IntVar, Button, Label, Entry, Frame, messagebox, RIDGE, Toplevel, \
     Checkbutton, END
 
@@ -205,7 +205,49 @@ class FenetreIntroduction(Toplevel):
     def obtenir_infos_remplissage(self):
         #### DÉBUT DÉFI LECTURE FICHIER CONFIG ####
         # Commencez par supprimer la ligne du raise.
-        raise NotImplementedError
+
+        # raise NotImplementedError
+
+        config = configparser.ConfigParser()
+
+        """
+        This module provides the ConfigParser class which implements a basic configuration language which provides 
+        a structure similar to what’s found in Microsoft Windows INI files. You can use this to write Python programs 
+        which can be customized by end users easily.
+
+        """
+
+        config = configparser.ConfigParser()
+
+        #print(config.read('config.ini'))
+        if not config.sections():
+            raise FileNotFoundError
+        if 'ARENE' not in config or 'JOUEURS' not in config:
+            raise KeyError
+        if 'taille' not in config['ARENE'] or 'nb_des_par_joueur' not in config['ARENE']:
+            raise KeyError
+        if 'nb_joueurs' not in config['JOUEURS']:
+            raise KeyError
+        if 'type' not in config['JOUEURS'] or 'humains' not in config['JOUEURS'] or 'ordinateurs' not in config['JOUEURS']:
+            raise KeyError
+        for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
+            if f'joueur{i}' not in config['JOUEURS']['type']:
+                raise KeyError
+            if f'joueur{i}' not in config['JOUEURS']['humains'] and f'joueur{i}' not in config['JOUEURS']['ordinateurs']:
+                raise KeyError
+
+        self.frame_arene.changer_taille(int(config['ARENE']['taille']))
+        self.frame_arene.changer_nombre_des(int(config['ARENE']['nb_des_par_joueur']))
+        for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
+            if config['JOUEURS']['type'][f'joueur{i}'] == 'h':
+                self.frame_joueurs.changer_type_joueur(i - 1)
+            elif config['JOUEURS']['type'][f'joueur{i}'] == 'o':
+                self.frame_joueurs.changer_type_joueur(i - 1)
+                self.frame_joueurs.changer_type_joueur(i - 1)
+
+    #### FIN DÉFI LECTURE FICHIER CONFIG ####
+
+        #raise NotImplementedError
         #### FIN DÉFI LECTURE FICHIER CONFIG ####
 
 
@@ -216,6 +258,7 @@ class FenetreIntroduction(Toplevel):
         # for i in liste_lignes:
         #     i = i.rstrip('\n')
         # cle, valeur = ligne.rstrip().split(":")
+
 
 
 
