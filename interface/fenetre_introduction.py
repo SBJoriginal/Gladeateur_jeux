@@ -204,69 +204,38 @@ class FenetreIntroduction(Toplevel):
 
     def obtenir_infos_remplissage(self):
         #### DÉBUT DÉFI LECTURE FICHIER CONFIG ####
+
         # Commencez par supprimer la ligne du raise.
 
         # raise NotImplementedError
 
-        config = configparser.ConfigParser()
+        with open("./interface/config.txt", "r") as config:
+            for ligne in config:
+                cle, valeur = ligne.rstrip().split(":")
+                self.matcher(cle, valeur)
 
-        """
-        This module provides the ConfigParser class which implements a basic configuration language which provides 
-        a structure similar to what’s found in Microsoft Windows INI files. You can use this to write Python programs 
-        which can be customized by end users easily.
+    def matcher(self, cle, valeur):
+        if cle == 'dimension':
+            self.frame_arene.entry_dimension_carre.delete(0, END)
+            self.frame_arene.entry_dimension_carre.insert(0, valeur)
+        elif cle == 'n_des':
+            self.frame_arene.entry_nombre_des.delete(0, END)
+            self.frame_arene.entry_nombre_des.insert(0, valeur)
+        elif cle == 'joueurs':
+            if len(valeur.split(",")) >= 2 and len(valeur.split(",")) <= 5:
+                pass
+            else:
+                raise ValueError
+            i = 0
+            for joueur in valeur.split(","):
+                bouton_joueur = self.frame_joueurs.boutons_joueur[i]
+                i += 1
+                bouton_joueur.config(text=joueur)
+        elif cle == 'dessiner':
+            if valeur == 'oui':
+                pass
+            else:
+                return
+            self.frame_arene.mode_var.set(1)
 
-        """
-
-        config = configparser.ConfigParser()
-
-        #print(config.read('config.ini'))
-        if not config.sections():
-            raise FileNotFoundError
-        if 'ARENE' not in config or 'JOUEURS' not in config:
-            raise KeyError
-        if 'taille' not in config['ARENE'] or 'nb_des_par_joueur' not in config['ARENE']:
-            raise KeyError
-        if 'nb_joueurs' not in config['JOUEURS']:
-            raise KeyError
-        if 'type' not in config['JOUEURS'] or 'humains' not in config['JOUEURS'] or 'ordinateurs' not in config['JOUEURS']:
-            raise KeyError
-        for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
-            if f'joueur{i}' not in config['JOUEURS']['type']:
-                raise KeyError
-            if f'joueur{i}' not in config['JOUEURS']['humains'] and f'joueur{i}' not in config['JOUEURS']['ordinateurs']:
-                raise KeyError
-
-        self.frame_arene.changer_taille(int(config['ARENE']['taille']))
-        self.frame_arene.changer_nombre_des(int(config['ARENE']['nb_des_par_joueur']))
-        for i in range(1, int(config['JOUEURS']['nb_joueurs']) + 1):
-            if config['JOUEURS']['type'][f'joueur{i}'] == 'h':
-                self.frame_joueurs.changer_type_joueur(i - 1)
-            elif config['JOUEURS']['type'][f'joueur{i}'] == 'o':
-                self.frame_joueurs.changer_type_joueur(i - 1)
-                self.frame_joueurs.changer_type_joueur(i - 1)
-
-    #### FIN DÉFI LECTURE FICHIER CONFIG ####
-
-        #raise NotImplementedError
         #### FIN DÉFI LECTURE FICHIER CONFIG ####
-
-
-
-        # f = open(config.txt, 'r')
-        # liste_lignes = f.readlines()
-        # f.close()
-        # for i in liste_lignes:
-        #     i = i.rstrip('\n')
-        # cle, valeur = ligne.rstrip().split(":")
-
-
-
-
-
-
-
-
-
-
-
-

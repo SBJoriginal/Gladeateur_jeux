@@ -6,13 +6,13 @@ Fichier de correction TP4
 ---------------
 Prénom et Nom: EL HADJI DJIME NIMAGA
 Numéro de dossier (NI): 111 166 998
-Temps de réalisation:
+Temps de réalisation: 30h
 
 Étudiant 2
 ---------------
-Prénom et Nom:
-Numéro de dossier (NI):
-Temps de réalisation:
+Prénom et Nom : Plante, Lenny
+Numéro de dossier (NI) : 537 002 508
+Temps de réalisation: 30h
 
 Étudiant 3
 ---------------

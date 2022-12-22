@@ -5,14 +5,15 @@ et FrameJoueurActif. Cette fenêtre permet de jouer au jeu.
 
 from tkinter import Tk, Button, Label, messagebox
 
-from jeu.gladeateur import Gladeateur
-from interface.joueur_ordinateur import JoueurOrdinateur
-from interface.gestionnaire_io_interface import GestionnaireIOInterface
+#import Music as Music
+
 from interface.canvas_arene import CanvasArene
 from interface.fenetre_introduction import FenetreIntroduction
 from interface.frames_fenetre_principale import FrameDescription, FrameJoueurActif, FrameTableauJoueurs, \
     FrameTempsAttente
-
+from interface.gestionnaire_io_interface import GestionnaireIOInterface
+from interface.joueur_ordinateur import JoueurOrdinateur
+from jeu.gladeateur import Gladeateur
 
 class FenetrePrincipale(Tk):
     def __init__(self):
@@ -21,6 +22,8 @@ class FenetrePrincipale(Tk):
         Cette classe gère l'instance de GlaDéateurs, les joueurs et l'arène.
         """
         super().__init__()
+
+
 
         self.title("Les GlaDÉateurs")
         self.label_bienvenue = Label(text="Bienvenue aux GlaDéateurs!")
